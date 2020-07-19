@@ -26,11 +26,28 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+	- Sessions: 
+		In session based authentication the server creates and stores the session data in the server when the user
+		logs in and then stores the session id in a cookie on the client's browser. On every following request the
+		session id is sent to the server and the server compares it with the stored session data.
+	
+	- JSON Web Tokens
+		When using JSON Web user data is encrypted into a JSON Web Token with a secret and then sent back to the client. The JWT is then stored on the client sent as a header for every following request. The server receives and validates the JSON Web Token before sending a response to the client.
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+	
+	- `bcrypt` hashes passwords before they are saved into a database and also verifies passwords when someone 
+	   tries to login by comparing the hash of the input password with the hash of the one stored in the database.
 
 3. How are unit tests different from integration and end-to-end testing.
 
+	-  Unit tests are used to verify the correctness of one isolated part of a system. Integration tests are used 
+	   to test how different parts of the system work together. 
+
 4. How _Test Driven Development_ changes the way we write applications and tests.
+ 
+	- In Test Driven development we write the tests for our application before the application itself. In theory, 
+      when we start with the tests in mind then we can create higher quality code.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -38,12 +55,12 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
+- [X] Create a forked copy of this project
+- [X] Add your team lead as collaborator on Github
+- [X] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [X] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [X] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
 
