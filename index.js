@@ -3,8 +3,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-const welcomeRouter = require('./api/welcome/welcome-router');
-const usersRouter = require('./api/auth/auth-router');
+const authRouter = require('./api/auth/auth-router');
 const jokesRouter = require('./api/jokes/jokes-router');
 
 const server = express();
@@ -15,8 +14,7 @@ server.use(cors());
 server.use(express.json());
 server.use(cookieParser());
 
-server.use('/api', welcomeRouter);
-server.use('/api/auth', usersRouter);
+server.use('/api/auth', authRouter);
 server.use('/api/jokes', jokesRouter);
 
 server.use((err, req, res, next) => {
@@ -26,6 +24,12 @@ server.use((err, req, res, next) => {
     message: 'Something went wrong',
   });
 })
+
+server.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'The API is running!'
+  });
+});
 
 server.listen(port, () => {
   console.log(`Running at http://localhost:${port}`)
