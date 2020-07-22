@@ -27,10 +27,12 @@ server.use((err, req, res, next) => {
 
 server.get('/', (req, res) => {
   res.status(200).json({
-    message: 'The API is running!'
+    message: 'Welcome to the Auth-Testing Sprint API!'
   });
 });
 
 server.listen(port, () => {
   console.log(`Running at http://localhost:${port}`)
 })
+
+module.exports = server;

@@ -32,7 +32,9 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 		session id is sent to the server and the server compares it with the stored session data.
 	
 	- JSON Web Tokens
-		When using JSON Web user data is encrypted into a JSON Web Token with a secret and then sent back to the client. The JWT is then stored on the client sent as a header for every following request. The server receives and validates the JSON Web Token before sending a response to the client.
+		When using JSON Web user data is encrypted into a JSON Web Token with a secret and then sent back to the client. 
+		The JWT is then stored on the client sent as a header for every following request. The server receives and validates the 
+		JSON Web Token before sending a response to the client.
 
 2. What does `bcrypt` do to help us store passwords in a secure manner.
 	
